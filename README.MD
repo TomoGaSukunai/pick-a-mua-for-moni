@@ -5,6 +5,9 @@ Then pick a lucky one
 
 ## Devlop
 
+Nodejs required.  
+Better use yarn as packages manager, although npm is OK.
+
 ### Clone
 ```bash
 git clone <repo> [dir] 
@@ -28,10 +31,8 @@ yarn dist
 
 
 ## TODO
-
-### log history
-.  storage history
-.  show histoty
+[]storage history
+[]show histoty
 
 
 
