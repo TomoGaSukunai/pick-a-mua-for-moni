@@ -1,0 +1,2 @@
+// wrap
+require('./app.js')

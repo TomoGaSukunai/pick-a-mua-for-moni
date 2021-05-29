@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<link href="./node_modules/normalize.css/normalize.css" rel="stylesheet" />
+<!-- blueprint-icons.css file must be included alongside blueprint.css! -->
+<link href="./node_modules/@blueprintjs/icons/lib/css/blueprint-icons.css" rel="stylesheet" />
+<link href="./node_modules/@blueprintjs/core/lib/css/blueprint.css" rel="stylesheet" />
+<!-- add other blueprint-*.css files here -->
+
+<link href="./view/assets/main.css" rel="stylesheet" />
+<title>Pick a MUA</title>
+
+<body>
+    <div id='pick-a-mua' class='pick-a-mua'>
+
+    </div>
+    <script>
+        require('@babel/register')(require('./babel-register.config')); // jsx support
+        require('./view/app.jsx')
+    </script>
+
+</body>
+
+</html>

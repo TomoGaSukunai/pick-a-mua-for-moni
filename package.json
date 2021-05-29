@@ -1,0 +1,31 @@
+{
+  "name": "mua-member",
+  "version": "2.3.0",
+  "description": "Pick a MUA",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "author": "Ayaphis",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.1",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/register": "^7.13.16",
+    "@blueprintjs/core": "^3.45.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "electron": "^13.0.1",
+    "electron-builder": "^22.10.5"
+  },
+  "build":{
+    "appId": "Pick a MUA",
+    "win":{
+       "target":[{"target":"portable", "arch":["x64"]}]
+    }
+  }
+}

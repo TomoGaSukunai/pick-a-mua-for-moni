@@ -1,0 +1,113 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    animation: giligili 8s infinite;
+}
+
+@keyframes giligili {
+    0% {
+        background: silver;
+    }
+    30% {
+        background: pink;
+    }
+    100% {
+        background: silver;
+    }
+}
+
+.pick-a-mua {
+    height: 100%;
+    width: 100%;
+    /* background-color: darkslateblue; */
+}
+
+.member-list {
+    background-image: url(./moni.png);
+    BACKGROUND-SIZE: 600px;
+    background-position-x: 220px;
+    background-position-y: -70px;
+    background-repeat: no-repeat;
+    height: 90%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.member-list span {
+    display: inline-block;
+    font-family: '思源黑体 CN BOLD';
+    font-size: 18px;
+    color: azure;
+    padding-left: 12px;
+    text-shadow: -2px -2px #000000, -2px -1px #000000, -2px 0px #000000, -2px 1px #000000, -2px 2px #000000, -1px -2px #000000, -1px -1px #000000, -1px 0px #000000, -1px 1px #000000, -1px 2px #000000, 0px -2px #000000, 0px -1px #000000, 0px 0px #000000, 0px 1px #000000, 0px 2px #000000, 1px -2px #000000, 1px -1px #000000, 1px 0px #000000, 1px 1px #000000, 1px 2px #000000, 2px -2px #000000, 2px -1px #000000, 2px 0px #000000, 2px 1px #000000, 2px 2px #000000;
+}
+
+.list-rank {
+    padding-right: 12px;
+    width: 64px;
+    text-align: end;
+}
+
+.member-list span img {
+    border-radius: 60%;
+    width: 24px;
+    height: 24px;
+}
+
+button {
+    height: 10%;
+}
+
+.big-icon {
+    width: 128px !important;
+    height: 128px !important;
+}
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+/* Track */
+
+/* ::-webkit-scrollbar-track {
+     background: #f1f1f1;  
+} */
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: palevioletred;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: white;
+}
+
+/* .mua-text {
+    animation: giligili2 4s infinite !important;
+} */
+
+@keyframes giligili2 {
+    0% {
+        text-shadow: -2px -2px blue, -2px -1px blue, -2px 0px blue, -2px 1px blue, -2px 2px blue, -1px -2px blue, -1px -1px blue, -1px 0px blue, -1px 1px blue, -1px 2px blue, 0px -2px blue, 0px -1px blue, 0px 0px blue, 0px 1px blue, 0px 2px blue, 1px -2px blue, 1px -1px blue, 1px 0px blue, 1px 1px blue, 1px 2px blue, 2px -2px blue, 2px -1px blue, 2px 0px blue, 2px 1px blue, 2px 2px blue;
+    }
+    25% {
+        /* background: indianred; */
+    }
+    50% {
+        text-shadow: -2px -2px red, -2px -1px red, -2px 0px red, -2px 1px red, -2px 2px red, -1px -2px red, -1px -1px red, -1px 0px red, -1px 1px red, -1px 2px red, 0px -2px red, 0px -1px red, 0px 0px red, 0px 1px red, 0px 2px red, 1px -2px red, 1px -1px red, 1px 0px red, 1px 1px red, 1px 2px red, 2px -2px red, 2px -1px red, 2px 0px red, 2px 1px red, 2px 2px red;
+    }
+    75% {
+        /* background: steelblue; */
+    }
+    100% {
+        text-shadow: -2px -2px blue, -2px -1px blue, -2px 0px blue, -2px 1px blue, -2px 2px blue, -1px -2px blue, -1px -1px blue, -1px 0px blue, -1px 1px blue, -1px 2px blue, 0px -2px blue, 0px -1px blue, 0px 0px blue, 0px 1px blue, 0px 2px blue, 1px -2px blue, 1px -1px blue, 1px 0px blue, 1px 1px blue, 1px 2px blue, 2px -2px blue, 2px -1px blue, 2px 0px blue, 2px 1px blue, 2px 2px blue;
+    }
+}
