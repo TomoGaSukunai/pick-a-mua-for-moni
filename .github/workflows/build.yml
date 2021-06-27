@@ -1,40 +1,39 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+name: Build/release
 
-name: build
+on: release
 
-on:
-  release:
-    branches: [ master ]
-  
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
+  release:
+    runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
-        node-version: [14.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        os: [windows-latest]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-#     - run: npm ci
-      
-    - run: npm install
-    - run: npm run dist
-      env:
-          GH_TOKEN: ${{ secrets.ASSETS_TOKEN }}
-#     - run: npm test
-    - name: release-upload
-      uses: chaosddp/upload_asset_to_release@v0.1
-      with:
-        repo: pick-a-mua-for-moni
-        owner: tgs
-        tag_name: ${{ steps.release.outputs.tag_name }}
-        token: ${{ secrets.ASSETS_TOKEN }}
-        asset: "build/*.{exe}"
+      - name: Check out Git repository
+        uses: actions/checkout@v1
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+
+      - name: Build/release Electron app
+        uses: samuelmeuli/action-electron-builder@v1
+        with:
+          # GitHub token, automatically provided to the action
+          # (No need to define this secret in the repo settings)
+          github_token: ${{ secrets.github_token }}
+
+          # If the commit is tagged with a version (e.g. "v1.0.0"),
+          # release the app after building
+          release: ${{ startsWith(github.ref, 'refs/tags/v') }}
+      - name: release-upload
+        uses: chaosddp/upload_asset_to_release@v0.1
+        with:
+          repo: pick-a-mua-for-moni
+          owner: tgs
+          tag_name: ${{ steps.release.outputs.tag_name }}
+          token: ${{ secrets.ASSETS_TOKEN }}
+          asset: "build/*.{exe}"
