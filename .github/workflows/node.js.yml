@@ -20,11 +20,20 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    - run: npm install
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
 #     - run: npm ci
-    - run: npm run build --if-present
+    - run: npm run build
 #     - run: npm test
+    - name: release-upload
+      uses: chaosddp/upload_asset_to_release@v0.1
+      with:
+        repo: moni-mua-stream
+        owner: tgs
+        tag_name: ${{ steps.release.outputs.tag_name }}
+        token: ${{ secrets.ASSETS_TOKEN }}
+        asset: "build/*.{exe}"
