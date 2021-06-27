@@ -4,11 +4,9 @@
 name: Node.js CI
 
 on:
-  push:
+  release:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+  
 jobs:
   build:
 
@@ -26,14 +24,14 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 #     - run: npm ci
-
+      
     - run: npm install
     - run: npm run dist
 #     - run: npm test
     - name: release-upload
       uses: chaosddp/upload_asset_to_release@v0.1
       with:
-        repo: moni-mua-stream
+        repo: pick-a-mua-for-moni
         owner: tgs
         tag_name: ${{ steps.release.outputs.tag_name }}
         token: ${{ secrets.ASSETS_TOKEN }}
