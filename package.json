@@ -1,6 +1,6 @@
 {
   "name": "pick-a-mua-for-moni",
-  "version": "2.3.2",
+  "version": "2.3.9",
   "description": "Pick a MUA",
   "main": "index.js",
   "scripts": {
